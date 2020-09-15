@@ -1,0 +1,22 @@
+version: '3.4'
+
+volumes:
+    mysql-data:
+    public-media:
+
+services:
+    mysql:
+        image: percona:5.7
+        environment:
+            - MYSQL_ROOT_PASSWORD=root
+            - MYSQL_DATABASE=lchanvre
+        volumes:
+            - mysql-data:/var/lib/mysql:rw
+        ports:
+            - '3307:3306'
+
+    mailhog:
+        image: mailhog/mailhog:latest
+        ports:
+            - '1025:1025'
+            - '8025:8025'
