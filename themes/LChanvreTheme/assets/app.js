@@ -6,6 +6,7 @@ import './scss/index.scss';
 
 // Images
 import './media/logo.png';
+import './media/logo-black.png';
 import './media/homepage-banner.jpg';
 
 // Font awesome icons

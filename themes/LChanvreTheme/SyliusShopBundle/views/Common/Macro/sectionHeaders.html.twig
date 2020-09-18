@@ -4,3 +4,11 @@
         <p class="text-muted mb-4">{{ subheader|raw }}</p>
     {% endif %}
 {% endmacro %}
+
+{% macro square(header) %}
+    <div class="row">
+        <h2 class="col-12 mb-3 title-square">
+            {{ header }}
+        </h2>
+    </div>
+{% endmacro %}

@@ -19,6 +19,7 @@ sylius_fixtures:
                     options:
                         custom:
                             -   name: 'Chocolat noir artisanal au chanvre biologique'
+                                code: 'AR00008'
                                 tax_category: 'food'
                                 channels:
                                     - 'LCHANVRE'

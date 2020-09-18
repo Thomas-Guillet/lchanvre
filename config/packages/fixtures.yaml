@@ -2,6 +2,7 @@ imports:
     - { resource: 'fixtures/shop_configuration.yaml' }
     - { resource: 'fixtures/graine.yaml' }
     - { resource: 'fixtures/chocolat.yaml' }
+    - { resource: 'fixtures/huile.yaml' }
 
 parameters:
     env(SYLIUS_FIXTURES_HOSTNAME): 'localhost'

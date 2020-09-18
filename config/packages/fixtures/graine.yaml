@@ -19,6 +19,7 @@ sylius_fixtures:
                     options:
                         custom:
                             -   name: 'Graines décortiquées de chanvre biologique'
+                                code: 'AR00028'
                                 tax_category: 'food'
                                 channels:
                                     - 'LCHANVRE'
