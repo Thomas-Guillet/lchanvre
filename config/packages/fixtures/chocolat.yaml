@@ -2,7 +2,7 @@ sylius_fixtures:
     suites:
         lchanvre:
             fixtures:
-                graines_taxon:
+                chocolats_taxon:
                     name: taxon
                     options:
                         custom:
@@ -10,20 +10,20 @@ sylius_fixtures:
                                 code: 'MENU_CATEGORY'
                                 name: 'Produits'
                                 children:
-                                    -   code: 'graines'
-                                        name: 'Graines'
-                                        slug: 'graines'
+                                    -   code: 'chocolats'
+                                        name: 'Chocolats'
+                                        slug: 'chocolats'
 
-                graine_product:
+                chocolats_product:
                     name: product
                     options:
                         custom:
-                            -   name: 'Graines décortiquées de chanvre biologique'
+                            -   name: 'Chocolat noir artisanal au chanvre biologique'
                                 tax_category: 'food'
                                 channels:
                                     - 'LCHANVRE'
-                                main_taxon: 'graines'
+                                main_taxon: 'chocolats'
                                 taxons:
-                                    - 'graines'
+                                    - 'chocolats'
                                 images:
-                                    - { path: 'images/graines-decortiquees-de-chanvre-250-g-l-chanvre.jpg', type: 'main' }
+                                    - { path: 'images/chocolat-noir-chanvre-biologique-100-g-l-chanvre.jpg', type: 'main' }

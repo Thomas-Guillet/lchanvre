@@ -1,7 +1,8 @@
 imports:
     - { resource: 'fixtures/shop_configuration.yaml' }
     - { resource: 'fixtures/graine.yaml' }
+    - { resource: 'fixtures/chocolat.yaml' }
 
 parameters:
     env(SYLIUS_FIXTURES_HOSTNAME): 'localhost'
-    env(SYLIUS_FIXTURES_THEME_NAME): ~
+    env(SYLIUS_FIXTURES_THEME_NAME): 'sylius/bootstrap-theme'

@@ -27,12 +27,7 @@ sylius_fixtures:
                         custom:
                             category:
                                 code: 'MENU_CATEGORY'
-                                name: 'Category'
-                                translations:
-                                    en_US:
-                                        name: 'Category'
-                                    fr_FR:
-                                        name: 'Catégorie'
+                                name: 'Produits'
 
                 channel:
                     options:
