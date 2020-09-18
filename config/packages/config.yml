@@ -701,12 +701,9 @@ sylius_ui:
             blocks:
                 before_legacy:
                     template: "@SyliusUi/Block/_legacySonataEvent.html.twig"
-                    priority: 45
+                    priority: 40
                     context:
                         event: sylius.shop.layout.before_footer
-                plus:
-                    template: "@SyliusShop/Layout/Footer/Grid/_plus.html.twig"
-                    priority: 40
                 your_store:
                     template: "@SyliusShop/Layout/Footer/Grid/_your_store.html.twig"
                     priority: 30
@@ -813,17 +810,9 @@ sylius_ui:
 
         sylius.shop.layout.header:
             blocks:
-                header:
-                    template: "@SyliusShop/_header.html.twig"
+                custom_header:
+                    template: "@SyliusShop/Custom/Header/_header.html.twig"
                     priority: 20
-                after_header_legacy:
-                    template: "@SyliusUi/Block/_legacySonataEvent.html.twig"
-                    priority: 15
-                    context:
-                        event: sylius.shop.layout.after_header
-                menu:
-                    template: "@SyliusShop/Layout/Header/_menu.html.twig"
-                    priority: 10
 
         sylius.shop.layout.before_body:
             blocks:

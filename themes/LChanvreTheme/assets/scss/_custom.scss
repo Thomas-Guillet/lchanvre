@@ -1,3 +1,12 @@
+body {
+    background-color: #FBF6E9;
+    font-family: "Andada", serif;
+}
+
+a {
+    color: #B30936;
+}
+
 @include media-breakpoint-up(lg) {
     .dropdown-menu .dropdown-menu {
         top: 0;
@@ -53,14 +62,14 @@ label.required {
 }
 
 .logo {
-    width: 80px;
+    width: 130px;
 }
 
 .title-square {
     color: black;
-    font-weight: bold;
+    font-weight: 500;
     font-size: 34px;
-    line-height: 55px;
+    line-height: 1.3;
     text-align: center;
 }
 
@@ -69,8 +78,8 @@ label.required {
     content: "";
     display: inline-block;
     width: 150px;
-    height: 18px;
-    transform: translate(-11px, 33px);
+    height: 15px;
+    transform: translate(-11px, 32px);
     position: absolute;
     z-index: -1;
 }
@@ -78,7 +87,11 @@ label.required {
 .custom-top-bar {
     background-color: black;
     border-bottom: 1px solid #FFED00;
-    height: 35px;
+}
+
+.nav-link {
+    display: block;
+    padding: 0.5rem 1rem;
 }
 
 .c-white {
@@ -90,9 +103,42 @@ label.required {
 }
 
 .h-yellow:hover {
-    color: #FFED00;
+    position: relative;
+    color: black;
 }
 
-.mb-6{
+.h-yellow:hover::before {
+    background-color: #ffed00;
+    content: "";
+    display: inline-block;
+    width: 100%;
+    height: 13px;
+    left: 0;
+    transform: translate(0%, 22px);
+    position: absolute;
+    z-index: -1;
+}
+
+.mb-6 {
     margin-bottom: 4.5rem !important;
+}
+
+.custom__header {
+    height: 9rem;
+}
+
+.logo-bg {
+    position: relative;
+    width: 100%;
+    min-width: 180px;
+    height: 100%;
+    border-top: 9rem solid black;
+    border-left: 84px solid transparent;
+    border-right: 84px solid transparent;
+    a{
+        position: absolute;
+        top: 0%;
+        left: 50%;
+        transform: translate(-50%, -105%);
+    }
 }

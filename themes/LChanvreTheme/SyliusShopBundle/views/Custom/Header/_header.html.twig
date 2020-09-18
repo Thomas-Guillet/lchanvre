@@ -1,0 +1,27 @@
+<div class="container">
+    <div class="row custom__header">
+        <div class="col-4">
+            {{ render(url('sylius_shop_partial_taxon_index_by_code', {'code': 'MENU_CATEGORY', 'template': '@SyliusShop/Taxon/_horizontalMenu.html.twig'})) }}
+        </div>
+        <div class="col-4 logo-bg">
+            <a href="{{ path('sylius_shop_homepage') }}"><img class="logo" src="{{ asset('bootstrap-theme/images/logo.png', 'bootstrapTheme') }}" /></a>
+        </div>
+        <div class="col-4">
+            {{ render(url('sylius_shop_partial_cart_summary', {'template': '@SyliusShop/Cart/_widget.html.twig'})) }}
+        </div>
+    </div>
+    <header class="my-2">
+        <div class="row align-items-center no-gutters">
+
+            {% if taxons is defined and taxons|length > 0 %}
+                <div class="col-auto d-lg-none ml-2">
+                    <div class="navbar-light">
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNavbar">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                    </div>
+                </div>
+            {% endif %}
+        </div>
+    </header>
+</div>
