@@ -1,0 +1,144 @@
+sylius_fixtures:
+    suites:
+        lchanvre:
+            listeners:
+                orm_purger: ~
+                logger: ~
+                
+            fixtures:
+                locale: ~
+                currency:
+                    options:
+                        currencies: ['EUR']
+
+                geographical:
+                    options:
+                        countries:
+                            - 'FR'
+                        zones:
+                            FR:
+                                name: 'France'
+                                countries:
+                                    - 'FR'
+
+                menu_taxon:
+                    name: taxon
+                    options:
+                        custom:
+                            category:
+                                code: 'MENU_CATEGORY'
+                                name: 'Category'
+                                translations:
+                                    en_US:
+                                        name: 'Category'
+                                    fr_FR:
+                                        name: 'Catégorie'
+
+                channel:
+                    options:
+                        custom:
+                            fashion_web_store:
+                                name: 'Boutique LChanvre'
+                                code: 'LCHANVRE'
+                                locales:
+                                    - '%locale%'
+                                currencies:
+                                    - 'EUR'
+                                enabled: true
+                                hostname: '%env(resolve:SYLIUS_FIXTURES_HOSTNAME)%'
+                                theme_name: '%env(resolve:SYLIUS_FIXTURES_THEME_NAME)%'
+                                shop_billing_data:
+                                    company: 'LCHANVRE'
+                                    tax_id: 'je_sais_pas'
+                                    country_code: 'FR'
+                                    street: 'je_sais_pas'
+                                    city: 'je_sais_pas'
+                                    postcode: '35000'
+                                menu_taxon: 'MENU_CATEGORY'
+
+                payment_method:
+                    options:
+                        custom:
+                            bank_card:
+                                code: bank_card
+                                name: 'Carte bleu'
+                                channels: [lchanvre]
+                                gatewayName: 'system_pay_bank_card'
+                                gatewayFactory: 'system_pay'
+                                gatewayConfig:
+                                    payum.http_client: '@waaz.system_pay.bridge.system_pay_bridge'
+                                    environment: '%system_pay_environment%'
+                                    secret_key: '%system_pay_secret_key%'
+                                    merchant_id: '%system_pay_merchant_id%'
+                                    payment_cards: 'VISA;MASTERCARD'
+                                    use_old_security: true
+
+                shipping_method:
+                    options:
+                        custom:
+                            dhl_express:
+                                code: 'dhl_express'
+                                name: 'DHL Express'
+                                channels:
+                                    - 'LCHANVRE'
+
+                customer_group:
+                    options:
+                        custom:
+                            retail:
+                                code: 'retail'
+                                name: 'Retail'
+
+                shop_user:
+                    name: 'shop_user'
+                    options:
+                        random: 20
+                        custom:
+                            -   email: 'shop@lchanvre.com'
+                                first_name: 'John'
+                                last_name: 'Doe'
+                                password: 'root'
+
+                admin_user:
+                    name: "admin_user"
+                    options:
+                        custom:
+                            -   email: "admin@lchanvre.com"
+                                username: "admin"
+                                password: "root"
+                                enabled: true
+                                locale_code: fr_FR
+                                first_name: Admin
+                                last_name: LChanvre
+
+                tax_category:
+                    options:
+                        custom:
+                            clothing:
+                                code: "food"
+                                name: "Nourriture"
+
+                tax_rate:
+                    options:
+                        custom:
+                            food_tax:
+                                code: "food_55"
+                                name: "TVA 5.5%"
+                                zone: "FR"
+                                category: "food"
+                                amount: 0.055
+
+                promotion:
+                    options:
+                        custom:
+                            christmas:
+                                code: 'christmas'
+                                name: 'Christmas'
+                                channels:
+                                    - 'LCHANVRE'
+                                coupon_based: true
+                                coupons:
+                                    - code: 'CHRISTMAS_SALE'
+                                      expires_at: 'December 24'
+                                      usage_limit: 100
+                                      per_customer_usage_limit: 1

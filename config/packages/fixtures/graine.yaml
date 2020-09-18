@@ -1,0 +1,40 @@
+# This file is part of the Sylius package.
+# (c) Paweł Jędrzejewski
+
+sylius_fixtures:
+    suites:
+        lchanvre:
+            fixtures:
+                graines_taxon:
+                    name: taxon
+                    options:
+                        custom:
+                            category:
+                                code: 'MENU_CATEGORY'
+                                name: 'Category'
+                                translations:
+                                    en_US:
+                                        name: 'Category'
+                                    fr_FR:
+                                        name: 'Catégorie'
+                                children:
+                                    -   code: 'graines'
+                                        name: 'Graines'
+                                        slug: 'graines'
+                                        translations:
+                                            fr_FR:
+                                                name: 'Graines'
+
+                graine_product:
+                    name: product
+                    options:
+                        custom:
+                            -   name: 'Graines décortiquées de chanvre biologique'
+                                tax_category: 'food'
+                                channels:
+                                    - 'LCHANVRE'
+                                main_taxon: 'graines'
+                                taxons:
+                                    - 'graines'
+                                images:
+                                    - { path: '@SyliusCoreBundle/Resources/fixtures/t-shirts/woman/t-shirt_01.jpg', type: 'main' }
